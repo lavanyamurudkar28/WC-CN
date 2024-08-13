@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Celestial Wonders: Planets and Dwarf Planets</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="exp3style.css">
+</head>
+<body>
+    <!-- Video Background -->
+    <video autoplay muted loop id="bgVideo">
+        <source src="universe.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Main Content -->
+    <div class="content container">
+        <!-- Title Container -->
+        <div class="title-container">
+            <h1>Explore Celestial Wonders</h1>
+        </div>
+
+        <!-- Celestial Information Lookup Form -->
+        <section>
+            <h2>Find Information About a Planet or Dwarf Planet</h2>
+            <form action="/getCelestialInfo" method="get" class="needs-validation" novalidate>
+                <div class="mb-3">
+                    <label for="celestialName" class="form-label">Enter Name:</label>
+                    <input type="text" id="celestialName" name="celestialName" class="form-control" placeholder="e.g., Mars, Pluto" required>
+                    <div class="invalid-feedback">
+                        Please enter a celestial body name.
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Get Info</button>
+            </form>
+        </section>
+
+        <!-- Celestial Fact Submission Form -->
+        <section>
+            <h2>Submit an Interesting Fact</h2>
+            <form action="/submitCelestialFact" method="post" class="needs-validation" novalidate>
+                <div class="mb-3">
+                    <label for="celestialNameFact" class="form-label">Name of Celestial Body:</label>
+                    <input type="text" id="celestialNameFact" name="celestialName" class="form-control" placeholder="e.g., Eris" required>
+                    <div class="invalid-feedback">
+                        Please enter a celestial body name.
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="factDescription" class="form-label">Interesting Fact:</label>
+                    <textarea id="factDescription" name="factDescription" class="form-control" rows="4" placeholder="Share an interesting fact about this celestial body" required></textarea>
+                    <div class="invalid-feedback">
+                        Please enter a fact description.
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit Fact</button>
+            </form>
+        </section>
+
+        <!-- Celestial Comparison Tool Form -->
+        <section>
+            <h2>Compare Two Celestial Bodies</h2>
+            <form action="/compareCelestials" method="get" class="needs-validation" novalidate>
+                <div class="mb-3">
+                    <label for="celestial1" class="form-label">Select First Celestial Body:</label>
+                    <select id="celestial1" name="celestial1" class="form-select" required>
+                        <option value="" disabled selected>Select a celestial body</option>
+                        <!-- Planets -->
+                        <option value="Mercury">Mercury</option>
+                        <option value="Venus">Venus</option>
+                        <option value="Earth">Earth</option>
+                        <option value="Mars">Mars</option>
+                        <option value="Jupiter">Jupiter</option>
+                        <option value="Saturn">Saturn</option>
+                        <option value="Uranus">Uranus</option>
+                        <option value="Neptune">Neptune</option>
+                        <!-- Dwarf Planets -->
+                        <option value="Pluto">Pluto</option>
+                        <option value="Eris">Eris</option>
+                        <option value="Haumea">Haumea</option>
+                        <option value="Makemake">Makemake</option>
+                        <option value="Ceres">Ceres</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        Please select a celestial body.
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="celestial2" class="form-label">Select Second Celestial Body:</label>
+                    <select id="celestial2" name="celestial2" class="form-select" required>
+                        <option value="" disabled selected>Select a celestial body</option>
+                        <!-- Planets -->
+                        <option value="Mercury">Mercury</option>
+                        <option value="Venus">Venus</option>
+                        <option value="Earth">Earth</option>
+                        <option value="Mars">Mars</option>
+                        <option value="Jupiter">Jupiter</option>
+                        <option value="Saturn">Saturn</option>
+                        <option value="Uranus">Uranus</option>
+                        <option value="Neptune">Neptune</option>
+                        <!-- Dwarf Planets -->
+                        <option value="Pluto">Pluto</option>
+                        <option value="Eris">Eris</option>
+                        <option value="Haumea">Haumea</option>
+                        <option value="Makemake">Makemake</option>
+                        <option value="Ceres">Ceres</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        Please select a celestial body.
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Compare</button>
+            </form>
+        </section>
+
+        <!-- Celestial Facts Quiz Form -->
+        <section>
+            <h2>Quiz: Test Your Celestial Knowledge</h2>
+            <form action="/submitQuiz" method="post" class="needs-validation" novalidate>
+                <fieldset class="mb-3">
+                    <legend class="form-label">Answer the following questions:</legend>
+                    
+                    <div class="form-check">
+                        <input type="radio" id="jupiter" name="q1" value="Jupiter" class="form-check-input" required>
+                        <label for="jupiter" class="form-check-label">Jupiter</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" id="saturn" name="q1" value="Saturn" class="form-check-input">
+                        <label for="saturn" class="form-check-label">Saturn</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" id="neptune" name="q1" value="Neptune" class="form-check-input">
+                        <label for="neptune" class="form-check-label">Neptune</label>
+                    </div>
+
+                    <div class="form-check mt-3">
+                        <input type="radio" id="pluto" name="q2" value="Pluto" class="form-check-input" required>
+                        <label for="pluto" class="form-check-label">Pluto</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" id="eris" name="q2" value="Eris" class="form-check-input">
+                        <label for="eris" class="form-check-label">Eris</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" id="ceres" name="q2" value="Ceres" class="form-check-input">
+                        <label for="ceres" class="form-check-label">Ceres</label>
+                    </div>
+                </fieldset>
+                <button type="submit" class="btn btn-primary">Submit Quiz</button>
+            </form>
+        </section>
+    </div>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="exp3script.js"></script>
+</body>
+</html>

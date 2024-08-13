@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Celestial Wonders: Planets and Dwarf Planets</title>
+</head>
+<body>
+
+    <h1>Explore Celestial Wonders</h1>
+
+    <!-- Celestial Information Lookup Form -->
+    <section>
+        <h2>Find Information About a Planet or Dwarf Planet</h2>
+        <form action="/getCelestialInfo" method="get">
+            <label for="celestialName">Enter Name:</label>
+            <input type="text" id="celestialName" name="celestialName" placeholder="e.g., Mars, Pluto" required>
+            <button type="submit">Get Info</button>
+        </form>
+    </section>
+
+    <!-- Celestial Fact Submission Form -->
+    <section>
+        <h2>Submit an Interesting Fact</h2>
+        <form action="/submitCelestialFact" method="post">
+            <label for="celestialNameFact">Name of Celestial Body:</label>
+            <input type="text" id="celestialNameFact" name="celestialName" placeholder="e.g., Eris" required>
+            
+            <label for="factDescription">Interesting Fact:</label>
+            <textarea id="factDescription" name="factDescription" rows="4" placeholder="Share an interesting fact about this celestial body" required></textarea>
+            
+            <button type="submit">Submit Fact</button>
+        </form>
+    </section>
+
+    <!-- Celestial Comparison Tool Form -->
+    <section>
+        <h2>Compare Two Celestial Bodies</h2>
+        <form action="/compareCelestials" method="get">
+            <label for="celestial1">Select First Celestial Body:</label>
+            <select id="celestial1" name="celestial1" required>
+                <option value="">Select a celestial body</option>
+                <!-- Planets -->
+                <option value="Mercury">Mercury</option>
+                <option value="Venus">Venus</option>
+                <option value="Earth">Earth</option>
+                <option value="Mars">Mars</option>
+                <option value="Jupiter">Jupiter</option>
+                <option value="Saturn">Saturn</option>
+                <option value="Uranus">Uranus</option>
+                <option value="Neptune">Neptune</option>
+                <!-- Dwarf Planets -->
+                <option value="Pluto">Pluto</option>
+                <option value="Eris">Eris</option>
+                <option value="Haumea">Haumea</option>
+                <option value="Makemake">Makemake</option>
+                <option value="Ceres">Ceres</option>
+            </select>
+            
+            <label for="celestial2">Select Second Celestial Body:</label>
+            <select id="celestial2" name="celestial2" required>
+                <option value="">Select a celestial body</option>
+                <!-- Planets -->
+                <option value="Mercury">Mercury</option>
+                <option value="Venus">Venus</option>
+                <option value="Earth">Earth</option>
+                <option value="Mars">Mars</option>
+                <option value="Jupiter">Jupiter</option>
+                <option value="Saturn">Saturn</option>
+                <option value="Uranus">Uranus</option>
+                <option value="Neptune">Neptune</option>
+                <!-- Dwarf Planets -->
+                <option value="Pluto">Pluto</option>
+                <option value="Eris">Eris</option>
+                <option value="Haumea">Haumea</option>
+                <option value="Makemake">Makemake</option>
+                <option value="Ceres">Ceres</option>
+            </select>
+            
+            <button type="submit">Compare</button>
+        </form>
+    </section>
+
+    <!-- Celestial Facts Quiz Form -->
+    <section>
+        <h2>Quiz: Test Your Celestial Knowledge</h2>
+        <form action="/submitQuiz" method="post">
+            <fieldset>
+                <legend>Answer the following questions:</legend>
+                
+                <label for="q1">Which celestial body is known as the "King of the Solar System"?</label>
+                <input type="radio" id="jupiter" name="q1" value="Jupiter" required>
+                <label for="jupiter">Jupiter</label>
+                <input type="radio" id="saturn" name="q1" value="Saturn">
+                <label for="saturn">Saturn</label>
+                <input type="radio" id="neptune" name="q1" value="Neptune">
+                <label for="neptune">Neptune</label>
+                
+                <label for="q2">Which dwarf planet is located in the Kuiper Belt?</label>
+                <input type="radio" id="pluto" name="q2" value="Pluto" required>
+                <label for="pluto">Pluto</label>
+                <input type="radio" id="eris" name="q2" value="Eris">
+                <label for="eris">Eris</label>
+                <input type="radio" id="ceres" name="q2" value="Ceres">
+                <label for="ceres">Ceres</label>
+                
+                <button type="submit">Submit Quiz</button>
+            </fieldset>
+        </form>
+    </section>
+
+</body>
+</html>
+

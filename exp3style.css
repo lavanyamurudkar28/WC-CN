@@ -1,0 +1,66 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: Arial, sans-serif;
+    color: #fff;
+    text-align: center; /* Center-aligns all text content */
+}
+
+#bgVideo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1; /* Ensures the video is behind content */
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.6); /* Semi-transparent background for readability */
+    border-radius: 10px;
+    max-width: 800px;
+    margin: 0 auto;
+    margin-top: 100px; /* Add margin to push content down if needed */
+}
+
+.title-container {
+    margin-bottom: 40px; /* Add space below the title */
+}
+
+h1 {
+    font-size: 3rem; /* Increased size for visibility */
+    color: #fff;
+    margin-bottom: 20px;
+    text-align: center; /* Center the title */
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+form {
+    margin: 20px 0;
+}
+
+.invalid-feedback {
+    color: #dc3545;
+}
+
+.is-valid {
+    border-color: #28a745;
+}
+
+.is-invalid {
+    border-color: #dc3545;
+}
